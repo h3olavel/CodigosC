@@ -1,0 +1,62 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(int argc, char *argv[]) {
+		int **arr2d, **aux;
+	int tamFilas,elemFilas=3,i,j,c,r,sum=0;
+	char nom[100][10];
+	float prom;
+	int tam;
+	///////////////////////////////////////
+	do{
+		system("cls");
+		printf("Ingresa el numero de Alumnos");
+		scanf("%d",&tamFilas);
+	
+	} while(!(tamFilas>0));
+	arr2d=(int *)malloc(tamFilas * sizeof(int));
+	aux=arr2d;
+	///////////////////////////////////////
+	for (c=0;c<tamFilas;c++){
+		printf("Ingrese el %d nombre: ",c+1);
+		scanf("%s",&nom[c]);
+	}
+	///////////////////////////////////////
+	float arremangala[0];
+		arremangala[0]=tamFilas;
+	for (i=0; i<tamFilas; i++){
+		arr2d[i]=(int*)malloc(elemFilas * sizeof(int));
+		srand( time(NULL));
+		
+		for(j=0; j<elemFilas; j++){
+	
+				printf("Ingrece la calificacion [%d] de [%s]",j+1,nom[i]);
+				scanf("%d",&arr2d[i][j]);
+				sum=sum+arr2d[i][j];
+				prom=sum/elemFilas;
+				arremangala[i]=prom;
+     		}
+     		//////////////////////////////////////////////////////////////////
+     		for(j=0; j<elemFilas; j++){
+     			printf("[ %d ]",arr2d[i][j]);
+     			printf("\n");
+     		}		
+	
+		sum=0;
+ 	}
+ 	
+ 	///////////////////////////////////////
+ 		for(r=0;r<tamFilas;r++){
+			printf("El promedio de [%s] es: [%f]",nom[r],arremangala[r]);
+			printf("\n");
+		}
+ 	///////////////////////////////////////
+ 	for(j=0; j<elemFilas;j++){
+
+     free(arr2d[i]);
+
+     }
+	free(arr2d);
+	///////////////////////////////////////
+	return 0;
+}

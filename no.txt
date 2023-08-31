@@ -1,0 +1,31 @@
+
+#include <stdio.h>
+#include <iostream> 
+#include <string>
+using namespace std;
+    
+ int main (void)
+ 
+    {
+        string n [10];//Arreglo 1d para nombres
+        int c [4][10];//Arrelo 2d para sus calificaciones
+        
+        for (int i=0; i<=9; i++) //Ciclo for para llenar nombres
+        {
+         printf("Ingrese nombre del alumno:  %d \n", i);//Mensaje para el usuario 
+         cin>>n[i];
+        }
+        
+        for (int i=0; i<=9; i++)
+        {
+         cout<<n[i] <<endl;//con esto se imprimen los nombres antes dados
+         
+             for (int y=0; y<=3; y++)
+             {
+               printf("Ingrese calificacion de parcial  %d del alumno: ", y+1);//Mensaje para el usuario 
+                cin>>c[i][y];
+             }
+        }
+        
+        
+    }
